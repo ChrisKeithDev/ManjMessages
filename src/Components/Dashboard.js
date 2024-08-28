@@ -84,9 +84,9 @@ const Dashboard = () => {
         setBlinkTab(callsMessages.length > 0);
       });
 
-      return () => unsubscribe(); // Clean up on unmount
+      return () => unsubscribe();
     }
-  }, [currentUser, users]); // Depend on users array if it's part of your context
+  }, [currentUser, users]);
 
   // Effect for filtering messages based on search query and selected tab
   useEffect(() => {
@@ -140,7 +140,7 @@ const Dashboard = () => {
 
       setDisplayMessages(filteredMessages);
     }
-  }, [searchQuery, allMessages, selectedTab, users, currentUser.email]); // Rely on users array if it affects rendering
+  }, [searchQuery, allMessages, selectedTab, users, currentUser.email]);
 
   const handleNewMessageClick = () => {
     navigate("/message-form");
@@ -149,7 +149,7 @@ const Dashboard = () => {
   // Function to mark a message as read
   const markMessageAsRead = async (messageId) => {
     if (selectedTab === "Sent") {
-      return; // Assuming you don't want to mark messages as read in the 'Sent' tab
+      return;
     }
     const messagePath = `${collectionSecret}/${messageId}`;
     const messageRef = doc(firestore, messagePath);
@@ -215,7 +215,6 @@ const Dashboard = () => {
         await deleteDoc(messageRef);
         console.log("Message archived:", messageId);
 
-        // Optionally update the UI
         setDisplayMessages((prevMessages) =>
           prevMessages.filter((message) => message.id !== messageId)
         );

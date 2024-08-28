@@ -34,7 +34,7 @@ const MessageForm = () => {
               sipCode
           } = location.state.messageData;
           
-          setMessageId(id || null);  // Assuming you've added this state to hold the document ID
+          setMessageId(id || null);
           setCallerName(callerName || '');
           setCallerPhoneNum(callerPhoneNum || '');
           setCallerChild(callerChild || '');

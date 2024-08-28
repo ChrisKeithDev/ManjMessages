@@ -68,15 +68,15 @@
     background-color: transparent;
   }
   50% {
-    background-color: red; /* Choose a color that stands out */
+    background-color: red;
   }
 }
 
 .blink {
   animation: blinker 1.2s linear infinite;
-  border-radius: 8px;  /* Adjust the radius as needed */
+  border-radius: 8px;
   display: inline-block;
-  padding: 0rem 0.5rem 0rem 0.5rem; /* Add some padding for visual spacing */
+  padding: 0rem 0.5rem 0rem 0.5rem;
 }
 
 
